@@ -1,0 +1,19 @@
+﻿@model RentAMovie.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Details</h2>
+
+<table class="table table-bordered table-hover">
+    <tr><td>Name</td><td>@Model.Name</td></tr>
+    @if (Model.BirthDate.HasValue)
+    {
+        <tr><td>Birthdate</td><td>@Model.BirthDate.Value.ToShortDateString()</td></tr>
+    }
+
+    <tr><td>Membership Type</td><td>@Model.MembershipType.Name</td></tr>
+    <tr><td>Subscribed</td><td>@Model.IsSubscribedToNewsletter</td></tr>
+</table>
+
